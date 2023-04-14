@@ -1,0 +1,47 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+
+const features = [
+  {
+    title: "Bring Your Own Framework",
+    description:
+      "We Build your site using React, Svelte, Vue, Preact, web components, or just plain HTML + CSS + JavaScript.",
+    icon: "bx:bxs-briefcase",
+  },
+  {
+    title: "Unlimited Revision",
+    description:
+      "Taskify offers unlimited revisions for your website. We will change anything you don’t like until you are satisfied. No extra fees or limits. We want you to love your website and your business.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "SEO",
+    description:
+      "Taskify’s websites are SEO-friendly to increase your online visibility, traffic and conversions.",
+    icon: "bx:bxs-file-find",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Everything you need to start a website
+  </h2>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

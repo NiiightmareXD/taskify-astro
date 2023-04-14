@@ -1,0 +1,78 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Pricing from "@components/pricing.astro";
+
+const pricing = [
+  {
+    name: "Personal",
+    price: "$60",
+    popular: false,
+    features: [
+      "Free .online domain",
+      "Up to 3 pages",,
+      "Responsive Design",
+      "Fast Loading Speed",
+      "Unlimited Revisions",
+      "6 Days Delivery",
+    ],
+    button: {
+      text: "Get Started",
+      link: "https://www.fiverr.com",
+    },
+  },
+  {
+    name: "Pro",
+    price: "$90",
+    popular: false,
+    features: [
+      "Free .online domain",
+      "Up to 6 pages",,
+      "Responsive Design",
+      "Fast Loading Speed",
+      "Unlimited Revisions",
+      "Forms",
+      "15 Days Delivery",
+    ],
+    button: {
+      text: "Get Started",
+      link: "https://www.fiverr.com",
+    },
+  },
+  {
+    name: "Enterprise",
+    price: "$180",
+    popular: true,
+    features: [
+      "Free .com domain",
+      "Up to 15 pages",,
+      "Responsive Design",
+      "Fast Loading Speed",
+      "Unlimited Revisions",
+      "Forms",
+      "SEO",
+      "27 Days Delivery",
+    ],
+    button: {
+      text: "Contact us",
+      link: "/contact",
+    },
+  },
+];
+---
+
+<Layout title="Pricing">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Pricing</Fragment>
+      <Fragment slot="desc"
+        >Simple & Predictable pricing. No Surprises.</Fragment
+      >
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {pricing.map((item) => <Pricing plan={item} />)}
+    </div>
+  </Container>
+</Layout>
